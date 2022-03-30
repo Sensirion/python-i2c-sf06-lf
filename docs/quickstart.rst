@@ -15,20 +15,12 @@ The driver for the SensorBridge can be installed with
 
 .. _Sensirion SEK-SensorBridge: https://www.sensirion.com/sensorbridge/
 
-SF06-LF
--------
+Execute measurements
+---------------------
+
+The following code except shows a simple measurement sequence using this driver.
 
 .. sourcecode:: python
 
 .. literalinclude:: ../examples/example_sensorbridge_sf06_lf.py
-    :language: python
-
-
-
-Execute measurements
---------------------
-
-The following code except shows a simple measurement sequence using this driver.
-
-.. literalinclude:: ../example_measurement_sf06_lf.py
     :language: python

@@ -9,9 +9,11 @@
 # Product:      sf06_lf
 # Version:      1.0
 #
+import time
 
 import pytest
 from sensirion_i2c_driver import I2cConnection, CrcCalculator
+from sensirion_i2c_driver.errors import I2cTimeoutError
 from sensirion_shdlc_sensorbridge import (SensorBridgePort,
                                           SensorBridgeI2cProxy)
 from sensirion_i2c_adapter.i2c_channel import I2cChannel
@@ -59,6 +61,7 @@ def test_enter_sleep1(sensor):
 @pytest.mark.needs_device
 def test_start_h2o_continuous_measurement1(sensor):
     sensor.start_h2o_continuous_measurement()
+    time.sleep(0.1)
     (a_flow, a_temperature, a_signaling_flags
      ) = sensor.read_measurement_data(InvFlowScaleFactors.SLF3C_1300F)
     print(f"a_flow: {a_flow}; " f"a_temperature: {a_temperature}; " f"a_signaling_flags: {a_signaling_flags}; ")
@@ -68,6 +71,7 @@ def test_start_h2o_continuous_measurement1(sensor):
 @pytest.mark.needs_device
 def test_start_ipa_continuous_measurement1(sensor):
     sensor.start_ipa_continuous_measurement()
+    time.sleep(0.1)
     (a_flow, a_temperature, a_signaling_flags
      ) = sensor.read_measurement_data(InvFlowScaleFactors.SLF3C_1300F)
     print(f"a_flow: {a_flow}; " f"a_temperature: {a_temperature}; " f"a_signaling_flags: {a_signaling_flags}; ")
@@ -77,10 +81,9 @@ def test_start_ipa_continuous_measurement1(sensor):
 @pytest.mark.needs_device
 def test_start_single_thermal_conductivity_measurement_async1(sensor):
     sensor.start_single_thermal_conductivity_measurement_async()
-    (a_thermal_conductivity, a_temperature, a_delta_temperature
-     ) = sensor.read_thermal_conductivity_measurement_data()
-    print(f"a_thermal_conductivity: {a_thermal_conductivity}; " f"a_temperature: {a_temperature}; "
-          f"a_delta_temperature: {a_delta_temperature}; ")
+    with pytest.raises(I2cTimeoutError):
+        (_thermal_conductivity, _temperature, _delta_temperature
+         ) = sensor.read_thermal_conductivity_measurement_data()
 
 
 @pytest.mark.needs_device

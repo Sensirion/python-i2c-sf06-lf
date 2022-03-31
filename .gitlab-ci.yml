@@ -74,6 +74,7 @@ deploy_docs:
     - apt-get update && apt-get install -y graphviz
     - python setup.py install
     - pip install -r docs/requirements.txt
+    - chmod 777 ./ci/set_git_config.sh
     - ./ci/set_git_config.sh
     - sphinx-versioning push docs gh-pages .
 

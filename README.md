@@ -25,7 +25,7 @@ support it are listed in the API description.
    - LD20-0600L
 
    - LD20-2600B
-   - 
+
 The following instructions and examples use a *SLF3C-1300F*. Click [here](https://sensirion.com/media/documents/F3931025/621F8CCE/Sensirion_Liquid_Flow_Meters_SLF3C-1300F_Datasheet.pdf
 ) to download the datasheet.
 
@@ -33,6 +33,19 @@ The following instructions and examples use a *SLF3C-1300F*. Click [here](https:
 ## Usage
 
 See user manual at [https://sensirion.github.io](https://sensirion.github.io/python-i2c-sf06-lf).
+
+#### Detaild sensor pinout
+
+<img src="images/SLF3x_Pinout.png" width="300px">
+
+| *Pin* | *Cable Color* | *Name* | *Description*  | *Comments* |
+|-------|---------------|:------:|----------------|------------|
+| 1 |  |NC | Do not connect | 
+| 2 | green |SDA | I2C: Serial data input / output | 
+| 3 | red |VDD | Supply Voltage | 3.2 to 3.8V
+| 4 | black |GND | Ground | 
+| 5 | yellow |SCL | I2C: Serial clock input | 
+| 6 |  |NC | Do not connect | 
 
 ## Development
 

@@ -25,6 +25,8 @@ extras_require = {
         'pytest-cov~=3.0.0',
     ],
     'docs': [
+        'click==8.0.4',
+        'jinja2==3.0.1',
         'sphinx~=2.2.1',
         'sphinx-rtd-theme~=0.4.3',
     ]

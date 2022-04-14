@@ -18,20 +18,16 @@ The driver for the `Sensirion SEK-SensorBridge`_ can be installed with
 The following script shows how to use this driver on a Windows system using the `Sensirion SEK-SensorBridge`_ to
 execute a simple measurement.
 
-.. sourcecode:: python
-
 .. literalinclude:: ../examples/example_sensorbridge_sf06_lf.py
     :language: python
 
 The same sequence can be executed on a Linux system just by changing the name of the used COM-port.
 
-Execute measurements using internal Linux I2c driver
+Execute measurements using internal Linux I²C driver
 ----------------------------------------------------
 
-On Linux systems (e.g. Raspberry-PI) it is furthermore possible to use the Linux user space I2c driver directly.
-How this can be done is shown in the following script.
-
-.. sourcecode:: python
+On Linux systems it is furthermore possible to use the Linux user space I²C driver directly.
+How this can be done (e.g. for a sensor attached to the Raspberry Pi I²C port 1) is shown in the following script.
 
 .. literalinclude:: ../examples/example_linux_sf06_lf.py
     :language: python

@@ -95,7 +95,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#installing-the-sensorbridge-driver">Installing the SensorBridge Driver</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#execute-measurements-using-internal-linux-i2c-driver">Execute measurements using internal Linux I2c driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#execute-measurements-using-internal-linux-i2c-driver">Execute measurements using internal Linux I²C driver</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">API Documentation</a></li>
@@ -176,9 +176,6 @@
 </div>
 <p>The following script shows how to use this driver on a Windows system using the <a class="reference external" href="https://developer.sensirion.com/sensirion-products/sek-sensorbridge/">Sensirion SEK-SensorBridge</a> to
 execute a simple measurement.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
 <span class="c1"># -*- coding: utf-8 -*-</span>
 <span class="c1">#</span>
@@ -235,12 +232,9 @@ execute a simple measurement.</p>
 </div>
 </div>
 <div class="section" id="execute-measurements-using-internal-linux-i2c-driver">
-<h2>Execute measurements using internal Linux I2c driver<a class="headerlink" href="#execute-measurements-using-internal-linux-i2c-driver" title="Permalink to this headline">¶</a></h2>
-<p>On Linux systems (e.g. Raspberry-PI) it is furthermore possible to use the Linux user space I2c driver directly.
-How this can be done is shown in the following script.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
+<h2>Execute measurements using internal Linux I²C driver<a class="headerlink" href="#execute-measurements-using-internal-linux-i2c-driver" title="Permalink to this headline">¶</a></h2>
+<p>On Linux systems it is furthermore possible to use the Linux user space I²C driver directly.
+How this can be done (e.g. for a sensor attached to the Raspberry Pi I²C port 1) is shown in the following script.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
 <span class="c1"># -*- coding: utf-8 -*-</span>
 <span class="c1">#</span>

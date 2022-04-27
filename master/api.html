@@ -168,6 +168,361 @@
 <h1>SF06-LF<a class="headerlink" href="#sf06-lf" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="module-sensirion_i2c_sf06_lf.device">
 <span id="sf06lfdevice"></span><h2>Sf06LfDevice<a class="headerlink" href="#module-sensirion_i2c_sf06_lf.device" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase">
+<em class="property">class </em><code class="descclassname">sensirion_i2c_sf06_lf.device.</code><code class="descname">Sf06LfDeviceBase</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDeviceBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Low level API implementation of SF06-LF</p>
+<dl class="method">
+<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDeviceBase.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.start_h2o_continuous_measurement">
+<code class="descname">start_h2o_continuous_measurement</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDeviceBase.start_h2o_continuous_measurement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.start_h2o_continuous_measurement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts continuous measurement mode using calibration values for H₂O.
+The sensor measures both the flow rate and the temperature. After the command has been sent, the chip
+continuously measures and updates the measurement results which can be read with <em>read_measurement_data_raw</em>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.start_ipa_continuous_measurement">
+<code class="descname">start_ipa_continuous_measurement</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDeviceBase.start_ipa_continuous_measurement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.start_ipa_continuous_measurement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts continuous measurement mode using calibration values for Isopropyl alcohol.
+The sensor measures both the flow rate and the temperature. After the command has been sent, the chip
+continuously measures and updates the measurement results which can be read with <em>read_measurement_data_raw</em>.
+Supported by products: SLF3C-1300F, SLF3S-1300F, SLF3S-0600F, SLF3S-4000B</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.read_measurement_data_raw">
+<code class="descname">read_measurement_data_raw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDeviceBase.read_measurement_data_raw"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.read_measurement_data_raw" title="Permalink to this definition">¶</a></dt>
+<dd><p>After the command <em>start_xx_continuous_measurement</em> has been sent, the chip continuously measures and updates
+the measurement results. New results (flow, temperature, and signaling flags) can be read continuously
+with this command.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return raw_flow:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">For SLF3C-1300F, SLF3S-1300F convert to ml/min by applying: flow = raw_flow / 500
+For SLF3S-4000B convert to ml/min by applying: flow = raw_flow / 32
+For SLF3S-0600F convert to μl/min by applying: flow = raw_flow / 10
+For LD20-0600L convert to ml/h by applying: flow = raw_flow / 1200
+For LD20-2600B convert to ml/h by applying: flow = raw_flow / 20</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Return raw_temperature:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">Convert to degrees celsius by temperature = raw_temperature / 200</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Return signaling_flags:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Gives additional information about the measurement status. Refer to the
+sensor data sheet for detailed information. Following flags are defined:
+Air-in-Line flag (Bit 0), High Flow flag (Bit 1), Exponential smoothing active (Bit 5)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.stop_continuous_measurement">
+<code class="descname">stop_continuous_measurement</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDeviceBase.stop_continuous_measurement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.stop_continuous_measurement" title="Permalink to this definition">¶</a></dt>
+<dd><p>This command stops the continuous measurement and puts the sensor in idle mode.
+After it receives the stop command, the sensor needs up to 0.5ms to power down the heater,
+enter idle mode and be receptive for a new command.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.start_single_thermal_conductivity_measurement_sync">
+<code class="descname">start_single_thermal_conductivity_measurement_sync</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDeviceBase.start_single_thermal_conductivity_measurement_sync"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.start_single_thermal_conductivity_measurement_sync" title="Permalink to this definition">¶</a></dt>
+<dd><p>This command starts one thermal conductivity measurement and blocks for 2.3 seconds
+until the measurement results are ready.
+After completion of the measurement, the heater is switched off and the sensor enters idle mode and the results
+can be read anytime with <em>read_thermal_conductivity_measurement_data</em>.
+The sensor measures the thermal conductivity, the sensor temperature, and the
+delta-temperature (a measure for the temperature difference between the liquid and the sensor).
+Supported by products: SLF3C-1300F, SLF3S-4000B</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.start_single_thermal_conductivity_measurement_async">
+<code class="descname">start_single_thermal_conductivity_measurement_async</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDeviceBase.start_single_thermal_conductivity_measurement_async"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.start_single_thermal_conductivity_measurement_async" title="Permalink to this definition">¶</a></dt>
+<dd><p>This command starts one thermal conductivity measurement and returns immediately.
+Note that the sensor does not accept any other commands while the measurement is running, which takes
+approximately 2.3 seconds.
+After completion of the measurement, the heater is switched off and the sensor enters idle mode and the results
+can be read anytime with <em>read_thermal_conductivity_measurement_data</em>.
+The sensor measures the thermal conductivity, the sensor temperature, and the
+delta-temperature (a measure for the temperature difference between the liquid and the sensor).
+Supported by products: SLF3C-1300F, SLF3S-4000B</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.read_thermal_conductivity_measurement_data">
+<code class="descname">read_thermal_conductivity_measurement_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDeviceBase.read_thermal_conductivity_measurement_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.read_thermal_conductivity_measurement_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads single thermal conductivity measurement after a measurement has been started with
+<em>start_single_thermal_conductivity_measurement_sync</em> or <em>start_single_thermal_conductivity_measurement_async</em>.
+Supported by products: SLF3C-1300F, SLF3S-4000B</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return thermal_conductivity:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Thermal conductivity signal read from the sensor in arbitary units.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Return raw_temperature:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">Calibrated raw temperature signal read from the sensor.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Return raw_delta_temperature:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Calibrated raw delta temperature signal read from the sensor.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.enter_sleep">
+<code class="descname">enter_sleep</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDeviceBase.enter_sleep"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.enter_sleep" title="Permalink to this definition">¶</a></dt>
+<dd><p>In sleep mode the sensor uses a minimum amount of power. The mode can only be entered from idle mode,
+i.e. when the sensor is not measuring.
+This mode is particularly useful for battery operated devices. To minimize the current in this mode,
+the complexity of the sleep mode circuit has been reduced as much as possible, which is mainly reflected by
+the way the sensor exits the sleep mode. In sleep mode the sensor cannot be soft reset.
+Supported by products: LD20-0600L, LD20-2600B</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.exit_sleep">
+<code class="descname">exit_sleep</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDeviceBase.exit_sleep"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.exit_sleep" title="Permalink to this definition">¶</a></dt>
+<dd><p>The sensor exits the sleep mode and enters the idle mode when it receives the valid I2C address and a write
+bit (‘0’).
+Note that the I2C address is not acknowledged. It is necessary to poll the sensor to see whether the sensor has
+received the address and has woken up. This should take typically 25ms.
+Supported by products: LD20-0600L, LD20-2600B</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.read_product_identifier_prepare">
+<code class="descname">read_product_identifier_prepare</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDeviceBase.read_product_identifier_prepare"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.read_product_identifier_prepare" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepare to read the product identifier and the serial number.
+The command can only be executed from the idle mode, i.e. when the sensor is not performing measurements.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.read_product_identifier">
+<code class="descname">read_product_identifier</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDeviceBase.read_product_identifier"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.read_product_identifier" title="Permalink to this definition">¶</a></dt>
+<dd><p>This command allows to read product identifier and the serial number.
+The command can only be executed from the idle mode, i.e. when the sensor is not performing measurements
+and <em>read_product_identifier_prepare</em> is called before.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return product_identifier:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Note that the last 8 bits are the sensor’s revision number and are subject to change in case of an
+update of the specifications.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Return serial_number:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">64-bit unique serial number</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDevice">
+<em class="property">class </em><code class="descclassname">sensirion_i2c_sf06_lf.device.</code><code class="descname">Sf06LfDevice</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDevice"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDevice" title="Permalink to this definition">¶</a></dt>
+<dd><p>Driver class implementation of SF06-LF</p>
+<dl class="method">
+<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDevice.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDevice.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDevice.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDevice.read_measurement_data">
+<code class="descname">read_measurement_data</code><span class="sig-paren">(</span><em>inv_flow_scale_factor</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDevice.read_measurement_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDevice.read_measurement_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads the raw measurement values and converts them to their physcial units where applicable.
+For the flow the scaling factor and resulting flow unit depends on the specific sensor.
+The scaling factor is passed as an argument and the raw flow value is converted by applying:
+flow = raw_flow / inv_flow_scale_factor
+The scaling factors for the supported sensor are defined in enum <em>inv_flow_scale_factors</em></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>inv_flow_scale_factor</strong> – used to convert raw flow value</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return a_flow:</th><td class="field-body">As the flow scaling differs for specific sensor types the scaling factor
+must be passed as an argument. See the enum <em>inv_flow_scale_factors</em> for
+scaling factors of supported sensors.
+The raw value is converted by: flow = raw_flow / inv_flow_scale_factor
+Resulting unit depends on your specific sensor type.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Return a_temperature:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">temperature in degree celsius</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Return a_signaling_flags:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDevice.read_thermal_conductivity_measurement_data">
+<code class="descname">read_thermal_conductivity_measurement_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDevice.read_thermal_conductivity_measurement_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDevice.read_thermal_conductivity_measurement_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads single thermal conductivity measurement after a measurement has been started with
+<em>start_single_thermal_conductivity_measurement</em>.
+Supported by products: SLF3C-1300F, SLF3S-4000B</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return a_thermal_conductivity:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">thermal conductivity in arbitary unit</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Return a_temperature:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">temperature in degree celsius</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Return a_delta_temperature:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">delta temperature in degree celsius</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDevice.read_product_identifier">
+<code class="descname">read_product_identifier</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDevice.read_product_identifier"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDevice.read_product_identifier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read product identifier and the serial number.
+The command can only be executed from the idle mode, i.e. when the sensor is not performing measurements.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return product_identifier:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Note that the last 8 bits are the sensor’s revision number and are subject to change in case of an
+update of the specifications.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Return serial_number:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">64-bit unique serial number</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDevice.enter_sleep">
+<code class="descname">enter_sleep</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDevice.enter_sleep" title="Permalink to this definition">¶</a></dt>
+<dd><p>In sleep mode the sensor uses a minimum amount of power. The mode can only be entered from idle mode,
+i.e. when the sensor is not measuring.
+This mode is particularly useful for battery operated devices. To minimize the current in this mode,
+the complexity of the sleep mode circuit has been reduced as much as possible, which is mainly reflected by
+the way the sensor exits the sleep mode. In sleep mode the sensor cannot be soft reset.
+Supported by products: LD20-0600L, LD20-2600B</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDevice.exit_sleep">
+<code class="descname">exit_sleep</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDevice.exit_sleep" title="Permalink to this definition">¶</a></dt>
+<dd><p>The sensor exits the sleep mode and enters the idle mode when it receives the valid I2C address and a write
+bit (‘0’).
+Note that the I2C address is not acknowledged. It is necessary to poll the sensor to see whether the sensor has
+received the address and has woken up. This should take typically 25ms.
+Supported by products: LD20-0600L, LD20-2600B</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDevice.read_measurement_data_raw">
+<code class="descname">read_measurement_data_raw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDevice.read_measurement_data_raw" title="Permalink to this definition">¶</a></dt>
+<dd><p>After the command <em>start_xx_continuous_measurement</em> has been sent, the chip continuously measures and updates
+the measurement results. New results (flow, temperature, and signaling flags) can be read continuously
+with this command.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return raw_flow:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">For SLF3C-1300F, SLF3S-1300F convert to ml/min by applying: flow = raw_flow / 500
+For SLF3S-4000B convert to ml/min by applying: flow = raw_flow / 32
+For SLF3S-0600F convert to μl/min by applying: flow = raw_flow / 10
+For LD20-0600L convert to ml/h by applying: flow = raw_flow / 1200
+For LD20-2600B convert to ml/h by applying: flow = raw_flow / 20</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Return raw_temperature:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">Convert to degrees celsius by temperature = raw_temperature / 200</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Return signaling_flags:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Gives additional information about the measurement status. Refer to the
+sensor data sheet for detailed information. Following flags are defined:
+Air-in-Line flag (Bit 0), High Flow flag (Bit 1), Exponential smoothing active (Bit 5)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDevice.read_product_identifier_prepare">
+<code class="descname">read_product_identifier_prepare</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDevice.read_product_identifier_prepare" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepare to read the product identifier and the serial number.
+The command can only be executed from the idle mode, i.e. when the sensor is not performing measurements.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDevice.start_h2o_continuous_measurement">
+<code class="descname">start_h2o_continuous_measurement</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDevice.start_h2o_continuous_measurement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts continuous measurement mode using calibration values for H₂O.
+The sensor measures both the flow rate and the temperature. After the command has been sent, the chip
+continuously measures and updates the measurement results which can be read with <em>read_measurement_data_raw</em>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDevice.start_ipa_continuous_measurement">
+<code class="descname">start_ipa_continuous_measurement</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDevice.start_ipa_continuous_measurement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts continuous measurement mode using calibration values for Isopropyl alcohol.
+The sensor measures both the flow rate and the temperature. After the command has been sent, the chip
+continuously measures and updates the measurement results which can be read with <em>read_measurement_data_raw</em>.
+Supported by products: SLF3C-1300F, SLF3S-1300F, SLF3S-0600F, SLF3S-4000B</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDevice.start_single_thermal_conductivity_measurement_async">
+<code class="descname">start_single_thermal_conductivity_measurement_async</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDevice.start_single_thermal_conductivity_measurement_async" title="Permalink to this definition">¶</a></dt>
+<dd><p>This command starts one thermal conductivity measurement and returns immediately.
+Note that the sensor does not accept any other commands while the measurement is running, which takes
+approximately 2.3 seconds.
+After completion of the measurement, the heater is switched off and the sensor enters idle mode and the results
+can be read anytime with <em>read_thermal_conductivity_measurement_data</em>.
+The sensor measures the thermal conductivity, the sensor temperature, and the
+delta-temperature (a measure for the temperature difference between the liquid and the sensor).
+Supported by products: SLF3C-1300F, SLF3S-4000B</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDevice.start_single_thermal_conductivity_measurement_sync">
+<code class="descname">start_single_thermal_conductivity_measurement_sync</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDevice.start_single_thermal_conductivity_measurement_sync" title="Permalink to this definition">¶</a></dt>
+<dd><p>This command starts one thermal conductivity measurement and blocks for 2.3 seconds
+until the measurement results are ready.
+After completion of the measurement, the heater is switched off and the sensor enters idle mode and the results
+can be read anytime with <em>read_thermal_conductivity_measurement_data</em>.
+The sensor measures the thermal conductivity, the sensor temperature, and the
+delta-temperature (a measure for the temperature difference between the liquid and the sensor).
+Supported by products: SLF3C-1300F, SLF3S-4000B</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDevice.stop_continuous_measurement">
+<code class="descname">stop_continuous_measurement</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDevice.stop_continuous_measurement" title="Permalink to this definition">¶</a></dt>
+<dd><p>This command stops the continuous measurement and puts the sensor in idle mode.
+After it receives the stop command, the sensor needs up to 0.5ms to power down the heater,
+enter idle mode and be receptive for a new command.</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 <div class="section" id="module-sensirion_i2c_sf06_lf.commands">
 <span id="commands"></span><h2>Commands<a class="headerlink" href="#module-sensirion_i2c_sf06_lf.commands" title="Permalink to this headline">¶</a></h2>

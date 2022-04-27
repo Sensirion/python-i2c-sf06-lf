@@ -23,7 +23,7 @@ from sensirion_i2c_sf06_lf.result_types import (SignalDeltaTemperature, SignalFl
 
 
 class Sf06LfDeviceBase:
-
+    """Low level API implementation of SF06-LF"""
     def __init__(self, channel):
         self._channel = channel
 
@@ -172,6 +172,7 @@ class Sf06LfDeviceBase:
 
 
 class Sf06LfDevice(Sf06LfDeviceBase):
+    """Driver class implementation of SF06-LF"""
     sf06_lf = MixinAccess()
 
     def __init__(self, channel):

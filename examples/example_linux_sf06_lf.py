@@ -12,7 +12,7 @@
 
 import time
 from sensirion_i2c_driver import LinuxI2cTransceiver, I2cConnection, CrcCalculator
-from sensirion_i2c_adapter.i2c_channel import I2cChannel
+from sensirion_driver_adapters.i2c_adapter.i2c_channel import I2cChannel
 from sensirion_i2c_sf06_lf.device import Sf06LfDevice
 from sensirion_i2c_sf06_lf.commands import (InvFlowScaleFactors)
 

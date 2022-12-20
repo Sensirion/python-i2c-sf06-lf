@@ -10,7 +10,7 @@
 # Version:      1.0
 #
 
-from sensirion_i2c_adapter.transfer import execute_transfer
+from sensirion_driver_adapters.transfer import execute_transfer
 from sensirion_driver_support_types.mixin_access import MixinAccess
 from sensirion_i2c_sf06_lf.commands import (EnterSleep, ExitSleep, ReadMeasurementDataRaw, ReadProductIdentifier,
                                             ReadProductIdentifierPrepare, ReadThermalConductivityMeasurementData,

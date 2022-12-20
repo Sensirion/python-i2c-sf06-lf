@@ -11,7 +11,7 @@
 #
 
 from enum import Enum
-from sensirion_i2c_adapter.transfer import Transfer, TxData, RxData
+from sensirion_driver_adapters.transfer import Transfer, TxData, RxData
 from sensirion_driver_support_types.bitfield import BitField, BitfieldContainer
 
 

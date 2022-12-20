@@ -12,8 +12,8 @@ python_requires = '>=3.6, <4'
 # Packages that this package imports. List everything apart from standard lib packages.
 install_requires = [
     'sensirion-i2c-driver',
-    'sensirion-i2c-adapter',
-    'sensirion_driver_support_types~=0.1.0',
+    'sensirion-driver-adapters~=2.1.4',
+    'sensirion_driver_support_types~=0.2.0',
     'sensirion-shdlc-sensorbridge~=0.1.1'
 ]
 

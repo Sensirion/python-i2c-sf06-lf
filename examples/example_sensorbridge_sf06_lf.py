@@ -16,7 +16,7 @@ from sensirion_shdlc_driver import ShdlcSerialPort, ShdlcConnection
 from sensirion_shdlc_sensorbridge import (SensorBridgePort,
                                           SensorBridgeShdlcDevice,
                                           SensorBridgeI2cProxy)
-from sensirion_i2c_adapter.i2c_channel import I2cChannel
+from sensirion_driver_adapters.i2c_adapter.i2c_channel import I2cChannel
 from sensirion_i2c_sf06_lf.device import Sf06LfDevice
 from sensirion_i2c_sf06_lf.commands import (InvFlowScaleFactors)
 

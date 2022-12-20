@@ -194,7 +194,7 @@ execute a simple measurement.</p>
 <span class="kn">from</span> <span class="nn">sensirion_shdlc_sensorbridge</span> <span class="kn">import</span> <span class="p">(</span><span class="n">SensorBridgePort</span><span class="p">,</span>
                                           <span class="n">SensorBridgeShdlcDevice</span><span class="p">,</span>
                                           <span class="n">SensorBridgeI2cProxy</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">sensirion_i2c_adapter.i2c_channel</span> <span class="kn">import</span> <span class="n">I2cChannel</span>
+<span class="kn">from</span> <span class="nn">sensirion_driver_adapters.i2c_adapter.i2c_channel</span> <span class="kn">import</span> <span class="n">I2cChannel</span>
 <span class="kn">from</span> <span class="nn">sensirion_i2c_sf06_lf.device</span> <span class="kn">import</span> <span class="n">Sf06LfDevice</span>
 <span class="kn">from</span> <span class="nn">sensirion_i2c_sf06_lf.commands</span> <span class="kn">import</span> <span class="p">(</span><span class="n">InvFlowScaleFactors</span><span class="p">)</span>
 
@@ -249,7 +249,7 @@ How this can be done (e.g. for a sensor attached to the Raspberry Pi I²C port 1
 
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">from</span> <span class="nn">sensirion_i2c_driver</span> <span class="kn">import</span> <span class="n">LinuxI2cTransceiver</span><span class="p">,</span> <span class="n">I2cConnection</span><span class="p">,</span> <span class="n">CrcCalculator</span>
-<span class="kn">from</span> <span class="nn">sensirion_i2c_adapter.i2c_channel</span> <span class="kn">import</span> <span class="n">I2cChannel</span>
+<span class="kn">from</span> <span class="nn">sensirion_driver_adapters.i2c_adapter.i2c_channel</span> <span class="kn">import</span> <span class="n">I2cChannel</span>
 <span class="kn">from</span> <span class="nn">sensirion_i2c_sf06_lf.device</span> <span class="kn">import</span> <span class="n">Sf06LfDevice</span>
 <span class="kn">from</span> <span class="nn">sensirion_i2c_sf06_lf.commands</span> <span class="kn">import</span> <span class="p">(</span><span class="n">InvFlowScaleFactors</span><span class="p">)</span>
 

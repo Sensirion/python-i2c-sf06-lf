@@ -1,8 +1,15 @@
-include: https://gitlab/Sensirion/Python/ci-config-python/raw/master/gitlab-ci-template-v2.yml
+include:
+  - project: Sensirion/Python/ci-config-python
+    ref: master
+    file: gitlab-ci-template-v2.yml
+
 stages:
   - prepare
   - build
   - deploy
+
+variables:
+  YQ_URL: https://github.com/mikefarah/yq/releases/download/v4.33.3/yq_linux_amd64
 
 check_rst_syntax:
   stage: prepare
@@ -12,39 +19,37 @@ check_editorconfig:
   stage: prepare
   extends: .check_editorconfig_v2
 
-
 py3p6_linux_build:
   stage: build
   extends: .py3p6_linux_build_v2
-  variables:
-    PYTEST_ADDOPTS: '-m "not needs_device"'
+
+py3p8_linux_sdist:
+  stage: build
+  extends: .py3p8_linux_sdist_v2
 
 py3p8_linux_build:
   stage: build
   extends: .py3p8_linux_build_v2
-  variables:
-    PYTEST_ADDOPTS: '-m "not needs_device"'
-
 
 py3p8_64bit_win_build:
   stage: build
   extends: .py3p8_64bit_win_docker_build_v2
-  variables:
-    PYTEST_ADDOPTS: '-m "not needs_device"'
 
 build_docs:
   stage: build
-  extends: .build_docs_v2
+  tags: [ linux, docker ]
+  image: registry.gitlab.sensirion.lokal/sensirion/docker/docker-python:3.8-20.04-2.11.0
+  variables:
+    SPHINXOPTS: "-W --keep-going"
   script:
-    - apt-get update && apt-get install -y graphviz
     - python setup.py install
     - pip install -r docs/requirements.txt
-    - chmod 777 ./ci/set_git_config.sh
-    - ./ci/set_git_config.sh
-    - sphinx-versioning build -r "$CI_COMMIT_REF_NAME" -w "$CI_COMMIT_REF_NAME" docs docs/_build/html
-  after_script: [] # overwrite after_script from template
+    - cd docs
+    - make html
+  after_script:
+    - mv docs/_build/html/ public/  # everything in public/ will get published
   artifacts:
-    paths: [docs/_build]
+    paths: [ public ]
     expire_in: 1 week
     when: always
 
@@ -66,22 +71,65 @@ deploy_stable:
 
 deploy_docs:
   stage: deploy
-  tags: [linux, docker]
-  image: registry.gitlab.sensirion.lokal/sensirion/docker/docker-python:3.8-20.04-2.6.0
-  dependencies: []
-  only: [master, tags]
+  tags: [ linux, docker ]
+  image: registry.gitlab.sensirion.lokal/sensirion/docker/docker-python:3.8-20.04-2.11.0
+  dependencies: [ build_docs ]
+  only: [ master, tags ]
   script:
-    - apt-get update && apt-get install -y graphviz
-    - python setup.py install
-    - pip install -r docs/requirements.txt
     - chmod 777 ./ci/set_git_config.sh
     - ./ci/set_git_config.sh
-    - sphinx-versioning push docs gh-pages .
+    - chmod 777 ./ci/checkin_doc.sh
+    - ./ci/checkin_doc.sh
 
 TODO_check:
   stage: prepare
   image:
-      name: registry.gitlab.sensirion.lokal/mso-sw/drivers/docker-driver-generator:0.1.0
-  tags: [linux, docker]
+    name: registry.gitlab.sensirion.lokal/mso-sw/drivers/docker-driver-generator:0.2.0
+  tags: [ linux, docker ]
   script:
     - '! grep -rnw --exclude=.gitlab-ci.yml --exclude-dir=.git . -e "TODO"'
+
+metadata_check:
+  stage: prepare
+  image:
+    name: registry.gitlab.sensirion.lokal/mso-sw/drivers/docker-driver-generator:0.2.0
+  tags: [linux, docker]
+  before_script:
+    - apt-get -qq update && apt-get -qq install -y wget
+    - if ! [ -d downloads/ ]; then mkdir downloads; fi
+    - if ! [ -e downloads/yq ]; then wget --no-verbose $YQ_URL -O downloads/yq; fi
+    - cp downloads/yq /usr/local/bin/yq && chmod +x /usr/local/bin/yq
+  script:
+    # check if metadata.yml exists
+    - >
+      if ! [ -f "metadata.yml" ]; then
+        echo "metadata.yml file not found"
+        exit 1
+      fi
+    # check that dg_status is 'released'
+    - export DG_STATUS=$(yq ".dg_status.[]" ./metadata.yml)
+    - >
+      if [ $DG_STATUS != "released" ]; then
+        echo "dg_status in metadata.yml has to be 'released', not '$DG_STATUS'"
+        exit 1
+      fi
+    # check that last_generated is not older than timestamp of last non-merge commit (+ 3 minutes)
+    - export IS_MANUALLY_MODIFIED=$(yq ".is_manually_modified" ./metadata.yml)
+    - >
+      if [ $IS_MANUALLY_MODIFIED = false ]; then
+        export LAST_GENERATED_TS=$(yq ".last_generated" ./metadata.yml)
+        export LAST_GENERATED_TS_EPOCH=$(date -d "$LAST_GENERATED_TS" +%s)
+        export LAST_NON_MERGE_COMMIT_TS=$(git log --format=%ad --date=iso-strict --no-merges -1)
+        export COMMIT_TS_EPOCH=$(date -d "$LAST_NON_MERGE_COMMIT_TS" +%s)
+        if [ $(($LAST_GENERATED_TS_EPOCH + 180)) -lt $COMMIT_TS_EPOCH  ]; then
+          echo "'last_generated' timestamp in metadata.yml is older than commit timestamp ($LAST_GENERATED_TS vs $LAST_NON_MERGE_COMMIT_TS)"
+          exit 1
+        fi
+      fi
+    # check that 'is_manually_modified' is set to true if commit is not from driver generator
+    - export LAST_NON_MERGE_COMMIT_AUTHOR=$(git log --format=%an --no-merges -1)
+    - >
+      if ! [ "$LAST_NON_MERGE_COMMIT_AUTHOR" = "Driver Generator 2" ] && [ "$IS_MANUALLY_MODIFIED" = false ]; then
+        echo "Last commit is not from Driver Generator. Please update 'is_manually_modified' in metadata.yml"
+        exit 1
+      fi

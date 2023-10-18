@@ -57,3 +57,11 @@ def channel_provider(request):
     else:
         yield MockI2cChannelProvider(command_width=2,
                                      response_provider=Sf06LfResponseProvider())
+
+
+@pytest.fixture(scope="session")
+def requires_hw(request):
+    """ This fixture can be used to not run a test when only a Mock Channel is attached."""
+    serial_port = _get_serial_port(request.config)
+    if serial_port is None:
+        pytest.skip("Test requires hardware to be attached.")

@@ -1,74 +1,38 @@
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>API Documentation &mdash; sensirion_i2c_sf06_lf 0.1.0 documentation</title>
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API Documentation &mdash; sensirion_i2c_sf06_lf 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-  
-  
-
-  
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
-  <link rel="stylesheet" href="_static/banner.css" type="text/css" />
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Quick Start" href="quickstart.html" /> 
+    <link rel="prev" title="Build documentation" href="build-documentation.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="index.html" class="icon icon-home"> sensirion_i2c_sf06_lf
-          
-
-          
           </a>
-
-          
-            
-            
               <div class="version">
-                0.1.0
+                1.0.0
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -76,165 +40,140 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">API Documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#sf06-lf">SF06-LF</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#module-sensirion_i2c_sf06_lf.device">Sf06LfDevice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-sensirion_i2c_sf06_lf.commands">Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-sensirion_i2c_sf06_lf.result_types">Result Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#sf06-lf">SF06-LF</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-sensirion_i2c_sf06_lf.device">Sf06LfDevice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-sensirion_i2c_sf06_lf.commands">Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-sensirion_i2c_sf06_lf.result_types">Result Types</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 
-            
-          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">sensirion_i2c_sf06_lf</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html">Docs</a> &raquo;</li>
-        
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
       <li>API Documentation</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-            
             <a href="_sources/api.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="api-documentation">
-<h1>API Documentation<a class="headerlink" href="#api-documentation" title="Permalink to this headline">¶</a></h1>
-</div>
-<div class="section" id="sf06-lf">
-<h1>SF06-LF<a class="headerlink" href="#sf06-lf" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="module-sensirion_i2c_sf06_lf.device">
-<span id="sf06lfdevice"></span><h2>Sf06LfDevice<a class="headerlink" href="#module-sensirion_i2c_sf06_lf.device" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase">
-<em class="property">class </em><code class="descclassname">sensirion_i2c_sf06_lf.device.</code><code class="descname">Sf06LfDeviceBase</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDeviceBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase" title="Permalink to this definition">¶</a></dt>
-<dd><p>Low level API implementation of SF06-LF</p>
-<dl class="method">
-<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.__init__">
-<code class="descname">__init__</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDeviceBase.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
+             
+  <section id="api-documentation">
+<h1>API Documentation<a class="headerlink" href="#api-documentation" title="Permalink to this headline"></a></h1>
+<section id="sf06-lf">
+<h2>SF06-LF<a class="headerlink" href="#sf06-lf" title="Permalink to this headline"></a></h2>
+<section id="module-sensirion_i2c_sf06_lf.device">
+<span id="sf06lfdevice"></span><h3>Sf06LfDevice<a class="headerlink" href="#module-sensirion_i2c_sf06_lf.device" title="Permalink to this headline"></a></h3>
+<p>The class Sf06LfDeviceBase implements the low level interface of the sensor.
+The class Sf06LfDevice extends the Sf06LfDeviceBase. It provides additional functions to ease the use of the
+sensor.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_sf06_lf.device.</span></span><span class="sig-name descname"><span class="pre">Sf06LfDeviceBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDeviceBase"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase" title="Permalink to this definition"></a></dt>
+<dd><p>Low level API implementation of SF06_LF</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDeviceBase.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
 
-<dl class="method">
-<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.start_h2o_continuous_measurement">
-<code class="descname">start_h2o_continuous_measurement</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDeviceBase.start_h2o_continuous_measurement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.start_h2o_continuous_measurement" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.channel">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">channel</span></span><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.channel" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.start_h2o_continuous_measurement">
+<span class="sig-name descname"><span class="pre">start_h2o_continuous_measurement</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDeviceBase.start_h2o_continuous_measurement"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.start_h2o_continuous_measurement" title="Permalink to this definition"></a></dt>
 <dd><p>Starts continuous measurement mode using calibration values for H₂O.
 The sensor measures both the flow rate and the temperature. After the command has been sent, the chip
 continuously measures and updates the measurement results which can be read with <em>read_measurement_data_raw</em>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The first measurement result will be available after 12ms. Due to the thermal measurement principle small
+accuracy deviations (% m.v.) can occur while the sensor warms-up (60ms for SLF3x, 120ms for LD2x
+including the 12 ms for measurement initialization).</p>
+</div>
 </dd></dl>
 
-<dl class="method">
-<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.start_ipa_continuous_measurement">
-<code class="descname">start_ipa_continuous_measurement</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDeviceBase.start_ipa_continuous_measurement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.start_ipa_continuous_measurement" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.start_ipa_continuous_measurement">
+<span class="sig-name descname"><span class="pre">start_ipa_continuous_measurement</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDeviceBase.start_ipa_continuous_measurement"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.start_ipa_continuous_measurement" title="Permalink to this definition"></a></dt>
 <dd><p>Starts continuous measurement mode using calibration values for Isopropyl alcohol.
 The sensor measures both the flow rate and the temperature. After the command has been sent, the chip
 continuously measures and updates the measurement results which can be read with <em>read_measurement_data_raw</em>.
 Supported by products: SLF3C-1300F, SLF3S-1300F, SLF3S-0600F, SLF3S-4000B</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The first measurement result will be available after 12ms. Due to the thermal measurement principle small
+accuracy deviations (% m.v.) can occur while the sensor warms-up (60ms for SLF3x, 120ms for LD2x including
+the 12 ms for measurement initialization).</p>
+</div>
 </dd></dl>
 
-<dl class="method">
-<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.read_measurement_data_raw">
-<code class="descname">read_measurement_data_raw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDeviceBase.read_measurement_data_raw"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.read_measurement_data_raw" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.read_measurement_data_raw">
+<span class="sig-name descname"><span class="pre">read_measurement_data_raw</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDeviceBase.read_measurement_data_raw"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.read_measurement_data_raw" title="Permalink to this definition"></a></dt>
 <dd><p>After the command <em>start_xx_continuous_measurement</em> has been sent, the chip continuously measures and updates
 the measurement results. New results (flow, temperature, and signaling flags) can be read continuously
 with this command.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">Return raw_flow:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">For SLF3C-1300F, SLF3S-1300F convert to ml/min by applying: flow = raw_flow / 500
+<dl class="field-list simple">
+<dt class="field-odd">Return raw_flow</dt>
+<dd class="field-odd"><p>For SLF3C-1300F, SLF3S-1300F convert to ml/min by applying: flow = raw_flow / 500
 For SLF3S-4000B convert to ml/min by applying: flow = raw_flow / 32
 For SLF3S-0600F convert to μl/min by applying: flow = raw_flow / 10
 For LD20-0600L convert to ml/h by applying: flow = raw_flow / 1200
-For LD20-2600B convert to ml/h by applying: flow = raw_flow / 20</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">Return raw_temperature:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">Convert to degrees celsius by temperature = raw_temperature / 200</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">Return signaling_flags:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">Gives additional information about the measurement status. Refer to the
+For LD20-2600B convert to ml/h by applying: flow = raw_flow / 20</p>
+</dd>
+<dt class="field-even">Return raw_temperature</dt>
+<dd class="field-even"><p>Convert to degrees celsius by temperature = raw_temperature / 200</p>
+</dd>
+<dt class="field-odd">Return signaling_flags</dt>
+<dd class="field-odd"><p>Gives additional information about the measurement status. Refer to the
 sensor data sheet for detailed information. Following flags are defined:
-Air-in-Line flag (Bit 0), High Flow flag (Bit 1), Exponential smoothing active (Bit 5)</td>
-</tr>
-</tbody>
-</table>
+Air-in-Line flag (Bit 0), High Flow flag (Bit 1), Exponential smoothing active (Bit 5)</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The first measurement result will be available 12ms after starting the measurement.
+Small accuracy deviations (% m.v.) can occur during the first 60ms for SLF3x, 120ms for LD2x (including
+the 12ms initialization)</p>
+</div>
 </dd></dl>
 
-<dl class="method">
-<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.stop_continuous_measurement">
-<code class="descname">stop_continuous_measurement</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDeviceBase.stop_continuous_measurement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.stop_continuous_measurement" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.stop_continuous_measurement">
+<span class="sig-name descname"><span class="pre">stop_continuous_measurement</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDeviceBase.stop_continuous_measurement"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.stop_continuous_measurement" title="Permalink to this definition"></a></dt>
 <dd><p>This command stops the continuous measurement and puts the sensor in idle mode.
 After it receives the stop command, the sensor needs up to 0.5ms to power down the heater,
 enter idle mode and be receptive for a new command.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.start_single_thermal_conductivity_measurement_sync">
-<code class="descname">start_single_thermal_conductivity_measurement_sync</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDeviceBase.start_single_thermal_conductivity_measurement_sync"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.start_single_thermal_conductivity_measurement_sync" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.start_single_thermal_conductivity_measurement_sync">
+<span class="sig-name descname"><span class="pre">start_single_thermal_conductivity_measurement_sync</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDeviceBase.start_single_thermal_conductivity_measurement_sync"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.start_single_thermal_conductivity_measurement_sync" title="Permalink to this definition"></a></dt>
 <dd><p>This command starts one thermal conductivity measurement and blocks for 2.3 seconds
 until the measurement results are ready.
 After completion of the measurement, the heater is switched off and the sensor enters idle mode and the results
@@ -244,9 +183,9 @@ delta-temperature (a measure for the temperature difference between the liquid a
 Supported by products: SLF3C-1300F, SLF3S-4000B</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.start_single_thermal_conductivity_measurement_async">
-<code class="descname">start_single_thermal_conductivity_measurement_async</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDeviceBase.start_single_thermal_conductivity_measurement_async"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.start_single_thermal_conductivity_measurement_async" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.start_single_thermal_conductivity_measurement_async">
+<span class="sig-name descname"><span class="pre">start_single_thermal_conductivity_measurement_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDeviceBase.start_single_thermal_conductivity_measurement_async"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.start_single_thermal_conductivity_measurement_async" title="Permalink to this definition"></a></dt>
 <dd><p>This command starts one thermal conductivity measurement and returns immediately.
 Note that the sensor does not accept any other commands while the measurement is running, which takes
 approximately 2.3 seconds.
@@ -257,32 +196,29 @@ delta-temperature (a measure for the temperature difference between the liquid a
 Supported by products: SLF3C-1300F, SLF3S-4000B</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.read_thermal_conductivity_measurement_data">
-<code class="descname">read_thermal_conductivity_measurement_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDeviceBase.read_thermal_conductivity_measurement_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.read_thermal_conductivity_measurement_data" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.read_thermal_conductivity_measurement_data">
+<span class="sig-name descname"><span class="pre">read_thermal_conductivity_measurement_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDeviceBase.read_thermal_conductivity_measurement_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.read_thermal_conductivity_measurement_data" title="Permalink to this definition"></a></dt>
 <dd><p>Reads single thermal conductivity measurement after a measurement has been started with
 <em>start_single_thermal_conductivity_measurement_sync</em> or <em>start_single_thermal_conductivity_measurement_async</em>.
 Supported by products: SLF3C-1300F, SLF3S-4000B</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">Return thermal_conductivity:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">Thermal conductivity signal read from the sensor in arbitary units.</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">Return raw_temperature:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">Calibrated raw temperature signal read from the sensor.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">Return raw_delta_temperature:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">Calibrated raw delta temperature signal read from the sensor.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Return thermal_conductivity</dt>
+<dd class="field-odd"><p>thermal conductivity</p>
+</dd>
+<dt class="field-even">Return raw_temperature</dt>
+<dd class="field-even"><p>Convert to degrees celsius by temperature = raw_temperature / 200</p>
+</dd>
+<dt class="field-odd">Return raw_delta_temperature</dt>
+<dd class="field-odd"><p>The delta-temperature is a measure for the temperature difference between the liquid and the sensor.
+Convert to degrees celsius by delta_temperature = raw_delta_temperature / 1000</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.enter_sleep">
-<code class="descname">enter_sleep</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDeviceBase.enter_sleep"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.enter_sleep" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.enter_sleep">
+<span class="sig-name descname"><span class="pre">enter_sleep</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDeviceBase.enter_sleep"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.enter_sleep" title="Permalink to this definition"></a></dt>
 <dd><p>In sleep mode the sensor uses a minimum amount of power. The mode can only be entered from idle mode,
 i.e. when the sensor is not measuring.
 This mode is particularly useful for battery operated devices. To minimize the current in this mode,
@@ -291,9 +227,9 @@ the way the sensor exits the sleep mode. In sleep mode the sensor cannot be soft
 Supported by products: LD20-0600L, LD20-2600B</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.exit_sleep">
-<code class="descname">exit_sleep</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDeviceBase.exit_sleep"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.exit_sleep" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.exit_sleep">
+<span class="sig-name descname"><span class="pre">exit_sleep</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDeviceBase.exit_sleep"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.exit_sleep" title="Permalink to this definition"></a></dt>
 <dd><p>The sensor exits the sleep mode and enters the idle mode when it receives the valid I2C address and a write
 bit (‘0’).
 Note that the I2C address is not acknowledged. It is necessary to poll the sensor to see whether the sensor has
@@ -301,196 +237,290 @@ received the address and has woken up. This should take typically 25ms.
 Supported by products: LD20-0600L, LD20-2600B</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.read_product_identifier_prepare">
-<code class="descname">read_product_identifier_prepare</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDeviceBase.read_product_identifier_prepare"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.read_product_identifier_prepare" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.read_product_identifier_prepare">
+<span class="sig-name descname"><span class="pre">read_product_identifier_prepare</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDeviceBase.read_product_identifier_prepare"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.read_product_identifier_prepare" title="Permalink to this definition"></a></dt>
 <dd><p>Prepare to read the product identifier and the serial number.
 The command can only be executed from the idle mode, i.e. when the sensor is not performing measurements.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.read_product_identifier">
-<code class="descname">read_product_identifier</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDeviceBase.read_product_identifier"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.read_product_identifier" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.read_product_identifier">
+<span class="sig-name descname"><span class="pre">read_product_identifier</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDeviceBase.read_product_identifier"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDeviceBase.read_product_identifier" title="Permalink to this definition"></a></dt>
 <dd><p>This command allows to read product identifier and the serial number.
 The command can only be executed from the idle mode, i.e. when the sensor is not performing measurements
 and <em>read_product_identifier_prepare</em> is called before.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">Return product_identifier:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">Note that the last 8 bits are the sensor’s revision number and are subject to change in case of an
-update of the specifications.</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">Return serial_number:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">64-bit unique serial number</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Return product_identifier</dt>
+<dd class="field-odd"><p>Note that the last 8 bits are the sensor’s revision number and are subject to change in case of an
+update of the specifications.</p>
+</dd>
+<dt class="field-even">Return serial_number</dt>
+<dd class="field-even"><p>serial number</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="class">
-<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDevice">
-<em class="property">class </em><code class="descclassname">sensirion_i2c_sf06_lf.device.</code><code class="descname">Sf06LfDevice</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDevice"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDevice" title="Permalink to this definition">¶</a></dt>
-<dd><p>Driver class implementation of SF06-LF</p>
-<dl class="method">
-<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDevice.__init__">
-<code class="descname">__init__</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDevice.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDevice.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.device.Sf06LfDevice">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_sf06_lf.device.</span></span><span class="sig-name descname"><span class="pre">Sf06LfDevice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDevice"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDevice" title="Permalink to this definition"></a></dt>
+<dd><p>Driver class implementation of SF06_LF</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.device.Sf06LfDevice.sf06_lf">
+<span class="sig-name descname"><span class="pre">sf06_lf</span></span><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDevice.sf06_lf" title="Permalink to this definition"></a></dt>
+<dd><p>Access to base class</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDevice.read_measurement_data">
-<code class="descname">read_measurement_data</code><span class="sig-paren">(</span><em>inv_flow_scale_factor</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDevice.read_measurement_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDevice.read_measurement_data" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.device.Sf06LfDevice.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDevice.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDevice.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.device.Sf06LfDevice.read_measurement_data">
+<span class="sig-name descname"><span class="pre">read_measurement_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inv_flow_scale_factor</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDevice.read_measurement_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDevice.read_measurement_data" title="Permalink to this definition"></a></dt>
 <dd><p>Reads the raw measurement values and converts them to their physcial units where applicable.
 For the flow the scaling factor and resulting flow unit depends on the specific sensor.
 The scaling factor is passed as an argument and the raw flow value is converted by applying:
 flow = raw_flow / inv_flow_scale_factor
 The scaling factors for the supported sensor are defined in enum <em>inv_flow_scale_factors</em></p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>inv_flow_scale_factor</strong> – used to convert raw flow value</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return a_flow:</th><td class="field-body">As the flow scaling differs for specific sensor types the scaling factor
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>inv_flow_scale_factor</strong> – used to convert raw flow value</p>
+</dd>
+<dt class="field-even">Return a_flow</dt>
+<dd class="field-even"><p>As the flow scaling differs for specific sensor types the scaling factor
 must be passed as an argument. See the enum <em>inv_flow_scale_factors</em> for
 scaling factors of supported sensors.
 The raw value is converted by: flow = raw_flow / inv_flow_scale_factor
-Resulting unit depends on your specific sensor type.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">Return a_temperature:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">temperature in degree celsius</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">Return a_signaling_flags:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body"></td>
-</tr>
-</tbody>
-</table>
+Resulting unit depends on your specific sensor type.</p>
+</dd>
+<dt class="field-odd">Return a_temperature</dt>
+<dd class="field-odd"><p>temperature in degree celsius</p>
+</dd>
+<dt class="field-even">Return a_signaling_flags</dt>
+<dd class="field-even"><p></p></dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDevice.read_thermal_conductivity_measurement_data">
-<code class="descname">read_thermal_conductivity_measurement_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDevice.read_thermal_conductivity_measurement_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDevice.read_thermal_conductivity_measurement_data" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.device.Sf06LfDevice.read_thermal_conductivity_measurement_data">
+<span class="sig-name descname"><span class="pre">read_thermal_conductivity_measurement_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDevice.read_thermal_conductivity_measurement_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDevice.read_thermal_conductivity_measurement_data" title="Permalink to this definition"></a></dt>
 <dd><p>Reads single thermal conductivity measurement after a measurement has been started with
 <em>start_single_thermal_conductivity_measurement</em>.
 Supported by products: SLF3C-1300F, SLF3S-4000B</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">Return a_thermal_conductivity:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">thermal conductivity in arbitary unit</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">Return a_temperature:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">temperature in degree celsius</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">Return a_delta_temperature:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">delta temperature in degree celsius</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Return a_thermal_conductivity</dt>
+<dd class="field-odd"><p>thermal conductivity in arbitary unit</p>
+</dd>
+<dt class="field-even">Return a_temperature</dt>
+<dd class="field-even"><p>temperature in degree celsius</p>
+</dd>
+<dt class="field-odd">Return a_delta_temperature</dt>
+<dd class="field-odd"><p>delta temperature in degree celsius</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDevice.read_product_identifier">
-<code class="descname">read_product_identifier</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDevice.read_product_identifier"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDevice.read_product_identifier" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.device.Sf06LfDevice.read_product_identifier">
+<span class="sig-name descname"><span class="pre">read_product_identifier</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/device.html#Sf06LfDevice.read_product_identifier"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDevice.read_product_identifier" title="Permalink to this definition"></a></dt>
 <dd><p>Read product identifier and the serial number.
 The command can only be executed from the idle mode, i.e. when the sensor is not performing measurements.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">Return product_identifier:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">Note that the last 8 bits are the sensor’s revision number and are subject to change in case of an
-update of the specifications.</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">Return serial_number:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">64-bit unique serial number</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Return product_identifier</dt>
+<dd class="field-odd"><p>Note that the last 8 bits are the sensor’s revision number and are subject to change in case of an
+update of the specifications.</p>
+</dd>
+<dt class="field-even">Return serial_number</dt>
+<dd class="field-even"><p>serial number</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDevice.enter_sleep">
-<code class="descname">enter_sleep</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDevice.enter_sleep" title="Permalink to this definition">¶</a></dt>
-<dd><p>In sleep mode the sensor uses a minimum amount of power. The mode can only be entered from idle mode,
-i.e. when the sensor is not measuring.
-This mode is particularly useful for battery operated devices. To minimize the current in this mode,
-the complexity of the sleep mode circuit has been reduced as much as possible, which is mainly reflected by
-the way the sensor exits the sleep mode. In sleep mode the sensor cannot be soft reset.
-Supported by products: LD20-0600L, LD20-2600B</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDevice.exit_sleep">
-<code class="descname">exit_sleep</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDevice.exit_sleep" title="Permalink to this definition">¶</a></dt>
-<dd><p>The sensor exits the sleep mode and enters the idle mode when it receives the valid I2C address and a write
-bit (‘0’).
-Note that the I2C address is not acknowledged. It is necessary to poll the sensor to see whether the sensor has
-received the address and has woken up. This should take typically 25ms.
-Supported by products: LD20-0600L, LD20-2600B</p>
+</section>
+<section id="module-sensirion_i2c_sf06_lf.commands">
+<span id="commands"></span><h3>Commands<a class="headerlink" href="#module-sensirion_i2c_sf06_lf.commands" title="Permalink to this headline"></a></h3>
+<p>The transfer classes specify the data that is transferred between host and sensor. The generated transfer classes
+are used by the driver class and not intended for direct use.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.InvFlowScaleFactors">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_sf06_lf.commands.</span></span><span class="sig-name descname"><span class="pre">InvFlowScaleFactors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/commands.html#InvFlowScaleFactors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.InvFlowScaleFactors" title="Permalink to this definition"></a></dt>
+<dd><p>An enumeration.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.InvFlowScaleFactors.SLF3C_1300F">
+<span class="sig-name descname"><span class="pre">SLF3C_1300F</span></span><em class="property"> <span class="pre">=</span> <span class="pre">500</span></em><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.InvFlowScaleFactors.SLF3C_1300F" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.InvFlowScaleFactors.SLF3S_1300F">
+<span class="sig-name descname"><span class="pre">SLF3S_1300F</span></span><em class="property"> <span class="pre">=</span> <span class="pre">500</span></em><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.InvFlowScaleFactors.SLF3S_1300F" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.InvFlowScaleFactors.SLF3S_4000B">
+<span class="sig-name descname"><span class="pre">SLF3S_4000B</span></span><em class="property"> <span class="pre">=</span> <span class="pre">32</span></em><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.InvFlowScaleFactors.SLF3S_4000B" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.InvFlowScaleFactors.SLF3S_0600F">
+<span class="sig-name descname"><span class="pre">SLF3S_0600F</span></span><em class="property"> <span class="pre">=</span> <span class="pre">10</span></em><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.InvFlowScaleFactors.SLF3S_0600F" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.InvFlowScaleFactors.LD20_0600L">
+<span class="sig-name descname"><span class="pre">LD20_0600L</span></span><em class="property"> <span class="pre">=</span> <span class="pre">1200</span></em><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.InvFlowScaleFactors.LD20_0600L" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.InvFlowScaleFactors.LD20_2600B">
+<span class="sig-name descname"><span class="pre">LD20_2600B</span></span><em class="property"> <span class="pre">=</span> <span class="pre">20</span></em><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.InvFlowScaleFactors.LD20_2600B" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
-<dl class="method">
-<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDevice.read_measurement_data_raw">
-<code class="descname">read_measurement_data_raw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDevice.read_measurement_data_raw" title="Permalink to this definition">¶</a></dt>
-<dd><p>After the command <em>start_xx_continuous_measurement</em> has been sent, the chip continuously measures and updates
-the measurement results. New results (flow, temperature, and signaling flags) can be read continuously
-with this command.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">Return raw_flow:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">For SLF3C-1300F, SLF3S-1300F convert to ml/min by applying: flow = raw_flow / 500
-For SLF3S-4000B convert to ml/min by applying: flow = raw_flow / 32
-For SLF3S-0600F convert to μl/min by applying: flow = raw_flow / 10
-For LD20-0600L convert to ml/h by applying: flow = raw_flow / 1200
-For LD20-2600B convert to ml/h by applying: flow = raw_flow / 20</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">Return raw_temperature:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">Convert to degrees celsius by temperature = raw_temperature / 200</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">Return signaling_flags:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">Gives additional information about the measurement status. Refer to the
-sensor data sheet for detailed information. Following flags are defined:
-Air-in-Line flag (Bit 0), High Flow flag (Bit 1), Exponential smoothing active (Bit 5)</td>
-</tr>
-</tbody>
-</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.SignalingFlagsT">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_sf06_lf.commands.</span></span><span class="sig-name descname"><span class="pre">SignalingFlagsT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">int_value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/commands.html#SignalingFlagsT"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.SignalingFlagsT" title="Permalink to this definition"></a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.SignalingFlagsT.air_in_line_flag">
+<span class="sig-name descname"><span class="pre">air_in_line_flag</span></span><em class="property"> <span class="pre">=</span> <span class="pre">BitField(offset=0,</span> <span class="pre">width=1)</span></em><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.SignalingFlagsT.air_in_line_flag" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.SignalingFlagsT.high_flow_flag">
+<span class="sig-name descname"><span class="pre">high_flow_flag</span></span><em class="property"> <span class="pre">=</span> <span class="pre">BitField(offset=1,</span> <span class="pre">width=1)</span></em><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.SignalingFlagsT.high_flow_flag" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.SignalingFlagsT.exp_smoothing_active">
+<span class="sig-name descname"><span class="pre">exp_smoothing_active</span></span><em class="property"> <span class="pre">=</span> <span class="pre">BitField(offset=5,</span> <span class="pre">width=1)</span></em><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.SignalingFlagsT.exp_smoothing_active" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
-<dl class="method">
-<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDevice.read_product_identifier_prepare">
-<code class="descname">read_product_identifier_prepare</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDevice.read_product_identifier_prepare" title="Permalink to this definition">¶</a></dt>
-<dd><p>Prepare to read the product identifier and the serial number.
-The command can only be executed from the idle mode, i.e. when the sensor is not performing measurements.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDevice.start_h2o_continuous_measurement">
-<code class="descname">start_h2o_continuous_measurement</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDevice.start_h2o_continuous_measurement" title="Permalink to this definition">¶</a></dt>
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.StartH2oContinuousMeasurement">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_sf06_lf.commands.</span></span><span class="sig-name descname"><span class="pre">StartH2oContinuousMeasurement</span></span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/commands.html#StartH2oContinuousMeasurement"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.StartH2oContinuousMeasurement" title="Permalink to this definition"></a></dt>
 <dd><p>Starts continuous measurement mode using calibration values for H₂O.
 The sensor measures both the flow rate and the temperature. After the command has been sent, the chip
 continuously measures and updates the measurement results which can be read with <em>read_measurement_data_raw</em>.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.StartH2oContinuousMeasurement.CMD_ID">
+<span class="sig-name descname"><span class="pre">CMD_ID</span></span><em class="property"> <span class="pre">=</span> <span class="pre">13832</span></em><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.StartH2oContinuousMeasurement.CMD_ID" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.StartH2oContinuousMeasurement.pack">
+<span class="sig-name descname"><span class="pre">pack</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/commands.html#StartH2oContinuousMeasurement.pack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.StartH2oContinuousMeasurement.pack" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.StartH2oContinuousMeasurement.tx">
+<span class="sig-name descname"><span class="pre">tx</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;sensirion_driver_adapters.rx_tx_data.TxData</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.StartH2oContinuousMeasurement.tx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
-<dl class="method">
-<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDevice.start_ipa_continuous_measurement">
-<code class="descname">start_ipa_continuous_measurement</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDevice.start_ipa_continuous_measurement" title="Permalink to this definition">¶</a></dt>
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.StartIpaContinuousMeasurement">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_sf06_lf.commands.</span></span><span class="sig-name descname"><span class="pre">StartIpaContinuousMeasurement</span></span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/commands.html#StartIpaContinuousMeasurement"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.StartIpaContinuousMeasurement" title="Permalink to this definition"></a></dt>
 <dd><p>Starts continuous measurement mode using calibration values for Isopropyl alcohol.
 The sensor measures both the flow rate and the temperature. After the command has been sent, the chip
 continuously measures and updates the measurement results which can be read with <em>read_measurement_data_raw</em>.
 Supported by products: SLF3C-1300F, SLF3S-1300F, SLF3S-0600F, SLF3S-4000B</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.StartIpaContinuousMeasurement.CMD_ID">
+<span class="sig-name descname"><span class="pre">CMD_ID</span></span><em class="property"> <span class="pre">=</span> <span class="pre">13845</span></em><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.StartIpaContinuousMeasurement.CMD_ID" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.StartIpaContinuousMeasurement.pack">
+<span class="sig-name descname"><span class="pre">pack</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/commands.html#StartIpaContinuousMeasurement.pack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.StartIpaContinuousMeasurement.pack" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.StartIpaContinuousMeasurement.tx">
+<span class="sig-name descname"><span class="pre">tx</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;sensirion_driver_adapters.rx_tx_data.TxData</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.StartIpaContinuousMeasurement.tx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
-<dl class="method">
-<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDevice.start_single_thermal_conductivity_measurement_async">
-<code class="descname">start_single_thermal_conductivity_measurement_async</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDevice.start_single_thermal_conductivity_measurement_async" title="Permalink to this definition">¶</a></dt>
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.ReadMeasurementDataRaw">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_sf06_lf.commands.</span></span><span class="sig-name descname"><span class="pre">ReadMeasurementDataRaw</span></span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/commands.html#ReadMeasurementDataRaw"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.ReadMeasurementDataRaw" title="Permalink to this definition"></a></dt>
+<dd><p>After the command <em>start_xx_continuous_measurement</em> has been sent, the chip continuously measures and updates
+the measurement results. New results (flow, temperature, and signaling flags) can be read continuously
+with this command.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.ReadMeasurementDataRaw.pack">
+<span class="sig-name descname"><span class="pre">pack</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/commands.html#ReadMeasurementDataRaw.pack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.ReadMeasurementDataRaw.pack" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.ReadMeasurementDataRaw.rx">
+<span class="sig-name descname"><span class="pre">rx</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;sensirion_driver_adapters.rx_tx_data.RxData</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.ReadMeasurementDataRaw.rx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.StopContinuousMeasurement">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_sf06_lf.commands.</span></span><span class="sig-name descname"><span class="pre">StopContinuousMeasurement</span></span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/commands.html#StopContinuousMeasurement"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.StopContinuousMeasurement" title="Permalink to this definition"></a></dt>
+<dd><p>This command stops the continuous measurement and puts the sensor in idle mode.
+After it receives the stop command, the sensor needs up to 0.5ms to power down the heater,
+enter idle mode and be receptive for a new command.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.StopContinuousMeasurement.CMD_ID">
+<span class="sig-name descname"><span class="pre">CMD_ID</span></span><em class="property"> <span class="pre">=</span> <span class="pre">16377</span></em><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.StopContinuousMeasurement.CMD_ID" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.StopContinuousMeasurement.pack">
+<span class="sig-name descname"><span class="pre">pack</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/commands.html#StopContinuousMeasurement.pack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.StopContinuousMeasurement.pack" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.StopContinuousMeasurement.tx">
+<span class="sig-name descname"><span class="pre">tx</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;sensirion_driver_adapters.rx_tx_data.TxData</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.StopContinuousMeasurement.tx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.StartSingleThermalConductivityMeasurementSync">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_sf06_lf.commands.</span></span><span class="sig-name descname"><span class="pre">StartSingleThermalConductivityMeasurementSync</span></span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/commands.html#StartSingleThermalConductivityMeasurementSync"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.StartSingleThermalConductivityMeasurementSync" title="Permalink to this definition"></a></dt>
+<dd><p>This command starts one thermal conductivity measurement and blocks for 2.3 seconds
+until the measurement results are ready.
+After completion of the measurement, the heater is switched off and the sensor enters idle mode and the results
+can be read anytime with <em>read_thermal_conductivity_measurement_data</em>.
+The sensor measures the thermal conductivity, the sensor temperature, and the
+delta-temperature (a measure for the temperature difference between the liquid and the sensor).
+Supported by products: SLF3C-1300F, SLF3S-4000B</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.StartSingleThermalConductivityMeasurementSync.CMD_ID">
+<span class="sig-name descname"><span class="pre">CMD_ID</span></span><em class="property"> <span class="pre">=</span> <span class="pre">13894</span></em><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.StartSingleThermalConductivityMeasurementSync.CMD_ID" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.StartSingleThermalConductivityMeasurementSync.pack">
+<span class="sig-name descname"><span class="pre">pack</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/commands.html#StartSingleThermalConductivityMeasurementSync.pack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.StartSingleThermalConductivityMeasurementSync.pack" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.StartSingleThermalConductivityMeasurementSync.tx">
+<span class="sig-name descname"><span class="pre">tx</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;sensirion_driver_adapters.rx_tx_data.TxData</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.StartSingleThermalConductivityMeasurementSync.tx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.StartSingleThermalConductivityMeasurementAsync">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_sf06_lf.commands.</span></span><span class="sig-name descname"><span class="pre">StartSingleThermalConductivityMeasurementAsync</span></span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/commands.html#StartSingleThermalConductivityMeasurementAsync"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.StartSingleThermalConductivityMeasurementAsync" title="Permalink to this definition"></a></dt>
 <dd><p>This command starts one thermal conductivity measurement and returns immediately.
 Note that the sensor does not accept any other commands while the measurement is running, which takes
 approximately 2.3 seconds.
@@ -499,283 +529,227 @@ can be read anytime with <em>read_thermal_conductivity_measurement_data</em>.
 The sensor measures the thermal conductivity, the sensor temperature, and the
 delta-temperature (a measure for the temperature difference between the liquid and the sensor).
 Supported by products: SLF3C-1300F, SLF3S-4000B</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.StartSingleThermalConductivityMeasurementAsync.CMD_ID">
+<span class="sig-name descname"><span class="pre">CMD_ID</span></span><em class="property"> <span class="pre">=</span> <span class="pre">13894</span></em><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.StartSingleThermalConductivityMeasurementAsync.CMD_ID" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.StartSingleThermalConductivityMeasurementAsync.pack">
+<span class="sig-name descname"><span class="pre">pack</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/commands.html#StartSingleThermalConductivityMeasurementAsync.pack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.StartSingleThermalConductivityMeasurementAsync.pack" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.StartSingleThermalConductivityMeasurementAsync.tx">
+<span class="sig-name descname"><span class="pre">tx</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;sensirion_driver_adapters.rx_tx_data.TxData</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.StartSingleThermalConductivityMeasurementAsync.tx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
-<dl class="method">
-<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDevice.start_single_thermal_conductivity_measurement_sync">
-<code class="descname">start_single_thermal_conductivity_measurement_sync</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDevice.start_single_thermal_conductivity_measurement_sync" title="Permalink to this definition">¶</a></dt>
-<dd><p>This command starts one thermal conductivity measurement and blocks for 2.3 seconds
-until the measurement results are ready.
-After completion of the measurement, the heater is switched off and the sensor enters idle mode and the results
-can be read anytime with <em>read_thermal_conductivity_measurement_data</em>.
-The sensor measures the thermal conductivity, the sensor temperature, and the
-delta-temperature (a measure for the temperature difference between the liquid and the sensor).
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.ReadThermalConductivityMeasurementData">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_sf06_lf.commands.</span></span><span class="sig-name descname"><span class="pre">ReadThermalConductivityMeasurementData</span></span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/commands.html#ReadThermalConductivityMeasurementData"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.ReadThermalConductivityMeasurementData" title="Permalink to this definition"></a></dt>
+<dd><p>Reads single thermal conductivity measurement after a measurement has been started with
+<em>start_single_thermal_conductivity_measurement_sync</em> or <em>start_single_thermal_conductivity_measurement_async</em>.
 Supported by products: SLF3C-1300F, SLF3S-4000B</p>
-</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.ReadThermalConductivityMeasurementData.pack">
+<span class="sig-name descname"><span class="pre">pack</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/commands.html#ReadThermalConductivityMeasurementData.pack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.ReadThermalConductivityMeasurementData.pack" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
 
-<dl class="method">
-<dt id="sensirion_i2c_sf06_lf.device.Sf06LfDevice.stop_continuous_measurement">
-<code class="descname">stop_continuous_measurement</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_i2c_sf06_lf.device.Sf06LfDevice.stop_continuous_measurement" title="Permalink to this definition">¶</a></dt>
-<dd><p>This command stops the continuous measurement and puts the sensor in idle mode.
-After it receives the stop command, the sensor needs up to 0.5ms to power down the heater,
-enter idle mode and be receptive for a new command.</p>
-</dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="module-sensirion_i2c_sf06_lf.commands">
-<span id="commands"></span><h2>Commands<a class="headerlink" href="#module-sensirion_i2c_sf06_lf.commands" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="sensirion_i2c_sf06_lf.commands.InvFlowScaleFactors">
-<em class="property">class </em><code class="descclassname">sensirion_i2c_sf06_lf.commands.</code><code class="descname">InvFlowScaleFactors</code><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/commands.html#InvFlowScaleFactors"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.InvFlowScaleFactors" title="Permalink to this definition">¶</a></dt>
-<dd><p>An enumeration.</p>
-</dd></dl>
-
-<dl class="class">
-<dt id="sensirion_i2c_sf06_lf.commands.SignalingFlagsT">
-<em class="property">class </em><code class="descclassname">sensirion_i2c_sf06_lf.commands.</code><code class="descname">SignalingFlagsT</code><span class="sig-paren">(</span><em>int_value: int = 0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/commands.html#SignalingFlagsT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.SignalingFlagsT" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
-<dt id="sensirion_i2c_sf06_lf.commands.SignalingFlagsT.__init__">
-<code class="descname">__init__</code><span class="sig-paren">(</span><em>int_value: int = 0</em><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.SignalingFlagsT.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.ReadThermalConductivityMeasurementData.rx">
+<span class="sig-name descname"><span class="pre">rx</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;sensirion_driver_adapters.rx_tx_data.RxData</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.ReadThermalConductivityMeasurementData.rx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
-<dt id="sensirion_i2c_sf06_lf.commands.StartH2oContinuousMeasurement">
-<em class="property">class </em><code class="descclassname">sensirion_i2c_sf06_lf.commands.</code><code class="descname">StartH2oContinuousMeasurement</code><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/commands.html#StartH2oContinuousMeasurement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.StartH2oContinuousMeasurement" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="attribute">
-<dt id="sensirion_i2c_sf06_lf.commands.StartH2oContinuousMeasurement.__init__">
-<code class="descname">__init__</code><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.StartH2oContinuousMeasurement.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.EnterSleep">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_sf06_lf.commands.</span></span><span class="sig-name descname"><span class="pre">EnterSleep</span></span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/commands.html#EnterSleep"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.EnterSleep" title="Permalink to this definition"></a></dt>
+<dd><p>In sleep mode the sensor uses a minimum amount of power. The mode can only be entered from idle mode,
+i.e. when the sensor is not measuring.
+This mode is particularly useful for battery operated devices. To minimize the current in this mode,
+the complexity of the sleep mode circuit has been reduced as much as possible, which is mainly reflected by
+the way the sensor exits the sleep mode. In sleep mode the sensor cannot be soft reset.
+Supported by products: LD20-0600L, LD20-2600B</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.EnterSleep.CMD_ID">
+<span class="sig-name descname"><span class="pre">CMD_ID</span></span><em class="property"> <span class="pre">=</span> <span class="pre">13943</span></em><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.EnterSleep.CMD_ID" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.EnterSleep.pack">
+<span class="sig-name descname"><span class="pre">pack</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/commands.html#EnterSleep.pack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.EnterSleep.pack" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.EnterSleep.tx">
+<span class="sig-name descname"><span class="pre">tx</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;sensirion_driver_adapters.rx_tx_data.TxData</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.EnterSleep.tx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
-<dt id="sensirion_i2c_sf06_lf.commands.StartIpaContinuousMeasurement">
-<em class="property">class </em><code class="descclassname">sensirion_i2c_sf06_lf.commands.</code><code class="descname">StartIpaContinuousMeasurement</code><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/commands.html#StartIpaContinuousMeasurement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.StartIpaContinuousMeasurement" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="attribute">
-<dt id="sensirion_i2c_sf06_lf.commands.StartIpaContinuousMeasurement.__init__">
-<code class="descname">__init__</code><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.StartIpaContinuousMeasurement.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.ExitSleep">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_sf06_lf.commands.</span></span><span class="sig-name descname"><span class="pre">ExitSleep</span></span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/commands.html#ExitSleep"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.ExitSleep" title="Permalink to this definition"></a></dt>
+<dd><p>The sensor exits the sleep mode and enters the idle mode when it receives the valid I2C address and a write
+bit (‘0’).
+Note that the I2C address is not acknowledged. It is necessary to poll the sensor to see whether the sensor has
+received the address and has woken up. This should take typically 25ms.
+Supported by products: LD20-0600L, LD20-2600B</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.ExitSleep.CMD_ID">
+<span class="sig-name descname"><span class="pre">CMD_ID</span></span><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.ExitSleep.CMD_ID" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.ExitSleep.pack">
+<span class="sig-name descname"><span class="pre">pack</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/commands.html#ExitSleep.pack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.ExitSleep.pack" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.ExitSleep.tx">
+<span class="sig-name descname"><span class="pre">tx</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;sensirion_driver_adapters.rx_tx_data.TxData</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.ExitSleep.tx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
-<dt id="sensirion_i2c_sf06_lf.commands.ReadMeasurementDataRaw">
-<em class="property">class </em><code class="descclassname">sensirion_i2c_sf06_lf.commands.</code><code class="descname">ReadMeasurementDataRaw</code><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/commands.html#ReadMeasurementDataRaw"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.ReadMeasurementDataRaw" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="attribute">
-<dt id="sensirion_i2c_sf06_lf.commands.ReadMeasurementDataRaw.__init__">
-<code class="descname">__init__</code><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.ReadMeasurementDataRaw.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.ReadProductIdentifierPrepare">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_sf06_lf.commands.</span></span><span class="sig-name descname"><span class="pre">ReadProductIdentifierPrepare</span></span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/commands.html#ReadProductIdentifierPrepare"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.ReadProductIdentifierPrepare" title="Permalink to this definition"></a></dt>
+<dd><p>Prepare to read the product identifier and the serial number.
+The command can only be executed from the idle mode, i.e. when the sensor is not performing measurements.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.ReadProductIdentifierPrepare.CMD_ID">
+<span class="sig-name descname"><span class="pre">CMD_ID</span></span><em class="property"> <span class="pre">=</span> <span class="pre">13948</span></em><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.ReadProductIdentifierPrepare.CMD_ID" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.ReadProductIdentifierPrepare.pack">
+<span class="sig-name descname"><span class="pre">pack</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/commands.html#ReadProductIdentifierPrepare.pack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.ReadProductIdentifierPrepare.pack" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.ReadProductIdentifierPrepare.tx">
+<span class="sig-name descname"><span class="pre">tx</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;sensirion_driver_adapters.rx_tx_data.TxData</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.ReadProductIdentifierPrepare.tx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
-<dt id="sensirion_i2c_sf06_lf.commands.StopContinuousMeasurement">
-<em class="property">class </em><code class="descclassname">sensirion_i2c_sf06_lf.commands.</code><code class="descname">StopContinuousMeasurement</code><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/commands.html#StopContinuousMeasurement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.StopContinuousMeasurement" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="attribute">
-<dt id="sensirion_i2c_sf06_lf.commands.StopContinuousMeasurement.__init__">
-<code class="descname">__init__</code><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.StopContinuousMeasurement.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.ReadProductIdentifier">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_sf06_lf.commands.</span></span><span class="sig-name descname"><span class="pre">ReadProductIdentifier</span></span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/commands.html#ReadProductIdentifier"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.ReadProductIdentifier" title="Permalink to this definition"></a></dt>
+<dd><p>This command allows to read product identifier and the serial number.
+The command can only be executed from the idle mode, i.e. when the sensor is not performing measurements
+and <em>read_product_identifier_prepare</em> is called before.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.ReadProductIdentifier.CMD_ID">
+<span class="sig-name descname"><span class="pre">CMD_ID</span></span><em class="property"> <span class="pre">=</span> <span class="pre">57602</span></em><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.ReadProductIdentifier.CMD_ID" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.ReadProductIdentifier.pack">
+<span class="sig-name descname"><span class="pre">pack</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/commands.html#ReadProductIdentifier.pack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.ReadProductIdentifier.pack" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.ReadProductIdentifier.tx">
+<span class="sig-name descname"><span class="pre">tx</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;sensirion_driver_adapters.rx_tx_data.TxData</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.ReadProductIdentifier.tx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.commands.ReadProductIdentifier.rx">
+<span class="sig-name descname"><span class="pre">rx</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;sensirion_driver_adapters.rx_tx_data.RxData</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.ReadProductIdentifier.rx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
-<dt id="sensirion_i2c_sf06_lf.commands.StartSingleThermalConductivityMeasurementSync">
-<em class="property">class </em><code class="descclassname">sensirion_i2c_sf06_lf.commands.</code><code class="descname">StartSingleThermalConductivityMeasurementSync</code><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/commands.html#StartSingleThermalConductivityMeasurementSync"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.StartSingleThermalConductivityMeasurementSync" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="attribute">
-<dt id="sensirion_i2c_sf06_lf.commands.StartSingleThermalConductivityMeasurementSync.__init__">
-<code class="descname">__init__</code><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.StartSingleThermalConductivityMeasurementSync.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
+</section>
+<section id="module-sensirion_i2c_sf06_lf.result_types">
+<span id="result-types"></span><h3>Result Types<a class="headerlink" href="#module-sensirion_i2c_sf06_lf.result_types" title="Permalink to this headline"></a></h3>
+<p>The signal classes specify transformations of the raw sensor signals into a meaningful units.
+The generated signal types are used by the driver class and not intended for direct use.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.result_types.SignalFlow">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_sf06_lf.result_types.</span></span><span class="sig-name descname"><span class="pre">SignalFlow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_flow</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inv_flow_scale_factor</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/result_types.html#SignalFlow"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.result_types.SignalFlow" title="Permalink to this definition"></a></dt>
+<dd><p>As the flow scaling differs for specific sensor types the scaling factor
+must be passed as an argument. See the enum <em>inv_flow_scale_factors</em> for
+scaling factors of supported sensors.
+The raw value is converted by: flow = raw_flow / inv_flow_scale_factor
+Resulting unit depends on your specific sensor type.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.result_types.SignalFlow.value">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#sensirion_i2c_sf06_lf.result_types.SignalFlow.value" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
-<dt id="sensirion_i2c_sf06_lf.commands.StartSingleThermalConductivityMeasurementAsync">
-<em class="property">class </em><code class="descclassname">sensirion_i2c_sf06_lf.commands.</code><code class="descname">StartSingleThermalConductivityMeasurementAsync</code><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/commands.html#StartSingleThermalConductivityMeasurementAsync"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.StartSingleThermalConductivityMeasurementAsync" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="attribute">
-<dt id="sensirion_i2c_sf06_lf.commands.StartSingleThermalConductivityMeasurementAsync.__init__">
-<code class="descname">__init__</code><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.StartSingleThermalConductivityMeasurementAsync.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.result_types.SignalTemperature">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_sf06_lf.result_types.</span></span><span class="sig-name descname"><span class="pre">SignalTemperature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_temperature</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/result_types.html#SignalTemperature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.result_types.SignalTemperature" title="Permalink to this definition"></a></dt>
+<dd><p>temperature in degree celsius</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.result_types.SignalTemperature.value">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#sensirion_i2c_sf06_lf.result_types.SignalTemperature.value" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
-<dt id="sensirion_i2c_sf06_lf.commands.ReadThermalConductivityMeasurementData">
-<em class="property">class </em><code class="descclassname">sensirion_i2c_sf06_lf.commands.</code><code class="descname">ReadThermalConductivityMeasurementData</code><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/commands.html#ReadThermalConductivityMeasurementData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.ReadThermalConductivityMeasurementData" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="attribute">
-<dt id="sensirion_i2c_sf06_lf.commands.ReadThermalConductivityMeasurementData.__init__">
-<code class="descname">__init__</code><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.ReadThermalConductivityMeasurementData.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.result_types.SignalDeltaTemperature">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_sf06_lf.result_types.</span></span><span class="sig-name descname"><span class="pre">SignalDeltaTemperature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_delta_temperature</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/result_types.html#SignalDeltaTemperature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.result_types.SignalDeltaTemperature" title="Permalink to this definition"></a></dt>
+<dd><p>delta temperature in degree celsius</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.result_types.SignalDeltaTemperature.value">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#sensirion_i2c_sf06_lf.result_types.SignalDeltaTemperature.value" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
-<dt id="sensirion_i2c_sf06_lf.commands.EnterSleep">
-<em class="property">class </em><code class="descclassname">sensirion_i2c_sf06_lf.commands.</code><code class="descname">EnterSleep</code><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/commands.html#EnterSleep"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.EnterSleep" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="attribute">
-<dt id="sensirion_i2c_sf06_lf.commands.EnterSleep.__init__">
-<code class="descname">__init__</code><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.EnterSleep.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.result_types.SignalThermalConductivity">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_sf06_lf.result_types.</span></span><span class="sig-name descname"><span class="pre">SignalThermalConductivity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_thermal_conductivity</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/result_types.html#SignalThermalConductivity"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.result_types.SignalThermalConductivity" title="Permalink to this definition"></a></dt>
+<dd><p>thermal conductivity in arbitary unit</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="sensirion_i2c_sf06_lf.result_types.SignalThermalConductivity.value">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#sensirion_i2c_sf06_lf.result_types.SignalThermalConductivity.value" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
-<dt id="sensirion_i2c_sf06_lf.commands.ExitSleep">
-<em class="property">class </em><code class="descclassname">sensirion_i2c_sf06_lf.commands.</code><code class="descname">ExitSleep</code><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/commands.html#ExitSleep"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.ExitSleep" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="attribute">
-<dt id="sensirion_i2c_sf06_lf.commands.ExitSleep.__init__">
-<code class="descname">__init__</code><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.ExitSleep.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="sensirion_i2c_sf06_lf.commands.ReadProductIdentifierPrepare">
-<em class="property">class </em><code class="descclassname">sensirion_i2c_sf06_lf.commands.</code><code class="descname">ReadProductIdentifierPrepare</code><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/commands.html#ReadProductIdentifierPrepare"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.ReadProductIdentifierPrepare" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="attribute">
-<dt id="sensirion_i2c_sf06_lf.commands.ReadProductIdentifierPrepare.__init__">
-<code class="descname">__init__</code><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.ReadProductIdentifierPrepare.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="sensirion_i2c_sf06_lf.commands.ReadProductIdentifier">
-<em class="property">class </em><code class="descclassname">sensirion_i2c_sf06_lf.commands.</code><code class="descname">ReadProductIdentifier</code><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/commands.html#ReadProductIdentifier"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.ReadProductIdentifier" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="attribute">
-<dt id="sensirion_i2c_sf06_lf.commands.ReadProductIdentifier.__init__">
-<code class="descname">__init__</code><a class="headerlink" href="#sensirion_i2c_sf06_lf.commands.ReadProductIdentifier.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="module-sensirion_i2c_sf06_lf.result_types">
-<span id="result-types"></span><h2>Result Types<a class="headerlink" href="#module-sensirion_i2c_sf06_lf.result_types" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="sensirion_i2c_sf06_lf.result_types.SignalFlow">
-<em class="property">class </em><code class="descclassname">sensirion_i2c_sf06_lf.result_types.</code><code class="descname">SignalFlow</code><span class="sig-paren">(</span><em>raw_flow</em>, <em>inv_flow_scale_factor</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/result_types.html#SignalFlow"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.result_types.SignalFlow" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
-<dt id="sensirion_i2c_sf06_lf.result_types.SignalFlow.__init__">
-<code class="descname">__init__</code><span class="sig-paren">(</span><em>raw_flow</em>, <em>inv_flow_scale_factor</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/result_types.html#SignalFlow.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.result_types.SignalFlow.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="sensirion_i2c_sf06_lf.result_types.SignalTemperature">
-<em class="property">class </em><code class="descclassname">sensirion_i2c_sf06_lf.result_types.</code><code class="descname">SignalTemperature</code><span class="sig-paren">(</span><em>raw_temperature</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/result_types.html#SignalTemperature"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.result_types.SignalTemperature" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
-<dt id="sensirion_i2c_sf06_lf.result_types.SignalTemperature.__init__">
-<code class="descname">__init__</code><span class="sig-paren">(</span><em>raw_temperature</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/result_types.html#SignalTemperature.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.result_types.SignalTemperature.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="sensirion_i2c_sf06_lf.result_types.SignalDeltaTemperature">
-<em class="property">class </em><code class="descclassname">sensirion_i2c_sf06_lf.result_types.</code><code class="descname">SignalDeltaTemperature</code><span class="sig-paren">(</span><em>raw_delta_temperature</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/result_types.html#SignalDeltaTemperature"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.result_types.SignalDeltaTemperature" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
-<dt id="sensirion_i2c_sf06_lf.result_types.SignalDeltaTemperature.__init__">
-<code class="descname">__init__</code><span class="sig-paren">(</span><em>raw_delta_temperature</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/result_types.html#SignalDeltaTemperature.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.result_types.SignalDeltaTemperature.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="sensirion_i2c_sf06_lf.result_types.SignalThermalConductivity">
-<em class="property">class </em><code class="descclassname">sensirion_i2c_sf06_lf.result_types.</code><code class="descname">SignalThermalConductivity</code><span class="sig-paren">(</span><em>raw_thermal_conductivity</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/result_types.html#SignalThermalConductivity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.result_types.SignalThermalConductivity" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
-<dt id="sensirion_i2c_sf06_lf.result_types.SignalThermalConductivity.__init__">
-<code class="descname">__init__</code><span class="sig-paren">(</span><em>raw_thermal_conductivity</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_sf06_lf/result_types.html#SignalThermalConductivity.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_i2c_sf06_lf.result_types.SignalThermalConductivity.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
-
-</dd></dl>
-
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-      
-        <a href="quickstart.html" class="btn btn-neutral float-left" title="Quick Start" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="build-documentation.html" class="btn btn-neutral float-left" title="Build documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &copy; Copyright 2022 Sensirion AG, Switzerland
-
-    </p>
+    <p>&#169; Copyright 2023 Sensirion AG, Switzerland.</p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-        <span class="fa fa-book"> Other Versions</span>
-        v: master
-        <span class="fa fa-caret-down"></span>
-    </span>
-    <div class="rst-other-versions">
-        <dl>
-            <dt>Tags</dt>
-            <dd><a href="0.1.0/api.html">0.1.0</a></dd>
-        </dl>
-        <dl>
-            <dt>Branches</dt>
-            <dd><a href="master/api.html">master</a></dd>
-        </dl>
-    </div>
-</div>
-
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

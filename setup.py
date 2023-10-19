@@ -11,9 +11,9 @@ python_requires = '>=3.6, <4'
 
 # Packages that this package imports. List everything apart from standard lib packages.
 install_requires = [
-    'sensirion-i2c-driver',
-    'sensirion-driver-adapters~=2.1.4',
-    'sensirion_driver_support_types~=0.2.0',
+    'sensirion-i2c-driver>=1.0.0,<2.0',
+    'sensirion-driver-adapters>=2.1.8,<3.0',
+    'sensirion-driver-support-types~=0.2.0',
     'sensirion-shdlc-sensorbridge~=0.1.1'
 ]
 
@@ -27,8 +27,8 @@ extras_require = {
     'docs': [
         'click==8.0.4',
         'jinja2==3.0.1',
-        'sphinx~=2.2.1',
-        'sphinx-rtd-theme~=0.4.3',
+        'sphinx~=4.2.0',
+        'sphinx-rtd-theme~=0.5.2',
     ]
 }
 
@@ -42,9 +42,7 @@ else:
 
 # Use README.rst and CHANGELOG.rst as package description
 root_path = os.path.dirname(__file__)
-readme = open(os.path.join(root_path, 'README.rst')).read()
-changelog = open(os.path.join(root_path, 'CHANGELOG.rst')).read()
-long_description = readme.strip() + "\n\n" + changelog.strip() + "\n"
+long_description = open(os.path.join(root_path, 'README.md')).read()
 
 setup(
     name='sensirion_i2c_sf06_lf',
@@ -61,15 +59,20 @@ setup(
         SLF3S-4000B
         LD20-0600L
         LD20-2600B""",
-    url='https://sensirion.github.io/python-i2c-sf06-lf/',
+    project_urls={
+        "Documentation": "https://sensirion.github.io/python-i2c-sf06-lf",
+        "Repository": "https://github.com/Sensirion/python-i2c-sf06-lf",
+        "Changelog": "https://github.com/Sensirion/python-i2c-sf06-lf/blob/master/CHANGELOG.rst",
+    },
     packages=find_packages(exclude=['tests', 'tests.*']),
     long_description=long_description,
+    long_description_content_type='text/markdown',
     python_requires=python_requires,
     install_requires=install_requires,
     extras_require=extras_require,
     classifiers=[
         'Intended Audience :: Developers',
-        'License :: Other/Proprietary License',
+        'License :: OSI Approved :: BSD License',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.8',
         'Topic :: Software Development :: Libraries :: Python Modules'
